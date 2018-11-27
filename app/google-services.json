@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "142302980333",
+    "firebase_url": "https://voicechat-bbac9.firebaseio.com",
+    "project_id": "voicechat-bbac9",
+    "storage_bucket": "voicechat-bbac9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142302980333:android:1a1e755bc4926945",
+        "android_client_info": {
+          "package_name": "com.huint.voicechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142302980333-s4bm4u3tc9kh0oftgc8heo76fgfj5ka5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.huint.voicechat",
+            "certificate_hash": "d09ef79300339bc46755836f2f9f1166e64d9ac5"
+          }
+        },
+        {
+          "client_id": "142302980333-ha9mfsbakcnn24gjproo8c4249pf4afb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIca16y9u_WpTWnB1P-h5xr9ubuJ-M66w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142302980333-ha9mfsbakcnn24gjproo8c4249pf4afb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
