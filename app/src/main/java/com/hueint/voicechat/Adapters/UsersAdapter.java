@@ -54,7 +54,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
         final User user = musers.get(position);
         holder.username.setText(user.getUsername());
         if (user.getImageUrl().equals("default")){
-            holder.profilepic.setImageResource(R.drawable.ic_launcher_background);
+            holder.profilepic.setImageResource(R.drawable.man);
         } else {
             Glide.with(mcontext).load(user.getImageUrl()).into(holder.profilepic);
         }
@@ -83,7 +83,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.ViewHolder> 
 
             super(itemView);
             username = itemView.findViewById(R.id.username);
-            profilepic = itemView.findViewById(R.id.username);
+            profilepic = itemView.findViewById(R.id.profile_image);
         }
     }
 }

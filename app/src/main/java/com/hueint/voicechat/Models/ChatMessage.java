@@ -3,37 +3,41 @@ package com.hueint.voicechat.Models;
 import java.util.Date;
 
 public class ChatMessage {
-    private String messageTxt;
-    private String messageUsr;
-    private long messageTime;
+    private String sender;
+    private String receiver;
+    private String message;
 
-    public ChatMessage(String messageTxt, String messageUsr) {
-        this.messageTxt = messageTxt;
-        this.messageUsr = messageUsr;
-        messageTime = new Date().getTime();
+    public ChatMessage(String sender, String receiver, String message) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.message = message;
     }
 
-    public String getMessageTxt() {
-        return messageTxt;
+    ChatMessage(){
+
     }
 
-    public void setMessageTxt(String messageTxt) {
-        this.messageTxt = messageTxt;
+    public String getSender() {
+        return sender;
     }
 
-    public String getMessageUsr() {
-        return messageUsr;
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
-    public void setMessageUsr(String messageUsr) {
-        this.messageUsr = messageUsr;
+    public String getReceiver() {
+        return receiver;
     }
 
-    public long getMessageTime() {
-        return messageTime;
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
     }
 
-    public void setMessageTime(long messageTime) {
-        this.messageTime = messageTime;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

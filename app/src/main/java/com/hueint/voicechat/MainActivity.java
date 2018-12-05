@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CircleImageView profilePic;
     private TextView username;
+    private String text_status;
 
     FirebaseUser firebaseUser;
     DatabaseReference reference;
@@ -46,9 +47,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Register");
+        getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         profilePic = (CircleImageView) findViewById(R.id.profileImage);
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                User user = dataSnapshot.getValue(User.class);
                username.setText(user.getUsername());
                if (user.getImageUrl().equals("default")){
-                   profilePic.setImageResource(R.drawable.ic_launcher_background);
+                   profilePic.setImageResource(R.drawable.man);
                } else {
                    Glide.with(MainActivity.this).load(user.getImageUrl()).into(profilePic);
                }
@@ -74,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-       /* FirebaseMessaging.getInstance().subscribeToTopic("test");
+        /*
+        FirebaseMessaging.getInstance().subscribeToTopic("test");
         FirebaseInstanceId.getInstance().getToken();*/
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         viewpager.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewpager);
+
     }
 
     @Override

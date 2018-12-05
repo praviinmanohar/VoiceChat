@@ -79,7 +79,7 @@
             android:id="@+id/btn_send"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:background="@drawable/ic_launcher_background"
+            android:background="@drawable/send"
             />
 
     </RelativeLayout>

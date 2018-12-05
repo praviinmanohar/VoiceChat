@@ -9,6 +9,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private MaterialEditText username, email, password;
     private Button registerAction;
-
+    private Switch switch1;
     private FirebaseAuth auth;
     private DatabaseReference reference;
 
@@ -36,15 +38,16 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        /*Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Register");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);*/
 
         username = (MaterialEditText) findViewById(R.id.username);
         email = (MaterialEditText) findViewById(R.id.email);
         password = (MaterialEditText) findViewById(R.id.password);
         registerAction = (Button) findViewById(R.id.btn_register);
+        switch1 = (Switch) findViewById(R.id.switch1);
 
         auth = FirebaseAuth.getInstance();
 
@@ -54,19 +57,21 @@ public class RegisterActivity extends AppCompatActivity {
                 String txt_username = username.getText().toString();
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
+                String txt_status = ""+switch1.isChecked();
+
                 if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)){
                     Toast.makeText(RegisterActivity.this, "All Fields are required", Toast.LENGTH_SHORT).show();
                 } else if (txt_password.length() < 6 ){
                     Toast.makeText(RegisterActivity.this, "Password must be atleat 6 character", Toast.LENGTH_SHORT).show();
                 } else {
-                    Registering(txt_username,txt_password,txt_email);
+                    Registering(txt_username,txt_password,txt_email,txt_status);
                 }
             }
         });
 
     }
 
-    private void Registering(final String username, String password, String email){
+    private void Registering(final String username, String password, String email, final String txt_status){
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -81,6 +86,7 @@ public class RegisterActivity extends AppCompatActivity {
                     hashMap.put("id",userid);
                     hashMap.put("username",username);
                     hashMap.put("imageUrl","default");
+                    hashMap.put("txtStatus",txt_status);
 
                     reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

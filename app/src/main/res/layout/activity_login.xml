@@ -6,34 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <include
+   <!-- <include
         android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
+        layout="@layout/bar_layout"/>-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:layout_below="@+id/toolbar"
+        android:layout_centerVertical="true"
         android:padding="16dp"
         >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login your Account"
-            android:textSize="20dp"
+            android:text="@string/app_name"
+            android:textSize="18sp"
             android:textStyle="bold"
             />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/username"
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
-            android:hint="Username"/>
+            android:hint="Email"/>
 
 
         <com.rengwuxian.materialedittext.MaterialEditText
@@ -58,8 +59,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Click here to Registero"
-            android:layout_marginTop="16dp"
+            android:text="No account yet? Create one"
+            android:layout_marginTop="26dp"
             android:id="@+id/registrationId"
             />
 

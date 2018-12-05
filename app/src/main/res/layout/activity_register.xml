@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    <include
+    <!--<include
         android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
+        layout="@layout/bar_layout"/>-->
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_centerInParent="true"
         android:gravity="center_horizontal"
         android:layout_below="@+id/toolbar"
         android:padding="16dp"
@@ -52,6 +53,16 @@
             android:layout_marginTop="10dp"
             app:met_floatingLabel="normal"
             android:hint="Password"/>
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:checked="true"
+            android:text="Do you want Large Text" />
+
 
         <Button
             android:layout_width="match_parent"
